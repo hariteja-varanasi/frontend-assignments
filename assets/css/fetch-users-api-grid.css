@@ -1,0 +1,22 @@
+.section-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;    
+    grid-gap: 25px;
+    padding: 25px;
+}
+
+.section-item{
+    background-color: crimson;    
+}
+
+h2{
+    color: goldenrod;
+    padding: 10px;
+}
+
+p{
+    color: white;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+}

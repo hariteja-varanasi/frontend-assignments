@@ -1,0 +1,53 @@
+.heading{
+    color: red;            
+    transition: calc(1s + 1s);    
+}
+.heading:hover{
+    color: black;
+}
+.outer-body{
+    border: 1px solid;
+    width: 40%;
+    height: 780px;                                  
+    display: grid;                        
+    padding: 20px;
+    background-color: lightgray;         
+}
+.text-box{
+    display: grid;  
+    grid-column-start: 1;              
+    grid-column-end: span 4;
+    height: 90px;    
+}
+.text-box>input{
+    /*background-color: lightgrey;*/
+    font-size: xx-large;    
+    text-align: center;  
+    color: black; 
+}
+.outer-body>.numbers, .outer-body>.operators, .outer-body>.equals, .outer-body>.clear-button {
+    background-color: grey;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100px;
+    width: 120px;                
+    font-size: xx-large;    
+}
+
+#buttonZero, #buttonClear{
+    height: 100px;
+    width: 92%;                
+    font-size: xx-large;
+    grid-column-start: 2;
+    grid-column-end: span 2;
+}
+#buttonAdd, #buttonMinus, #buttonMultiply, #buttonDivide, #buttonEquals{
+    width: 175px;
+}
+.outer-body>.clear-button{
+    font-weight: bold;                
+}

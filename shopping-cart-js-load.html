@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopping Portal</title>
+        <link rel="stylesheet" href="assets/css/fontawesome/css/all.css">
+        <link rel="stylesheet" href="assets/aos-master/dist/aos.css">
+        <link rel="stylesheet" href="assets/owl-carousel/docs/assets/css/docs.theme.min.css">
+        <link rel="stylesheet" href="assets/owl-carousel/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/owl-carousel/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/css/shopping-portal.css">
+    </head>
+    <body>
+        <section id="productContainer" class="container">
+            <header>
+                <nav>
+                    <img src="assets/images/logo.jpg" alt="">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">PRODUCTS</a></li>
+                        <i class="fas fa-shopping-cart fa-3x"></i>
+                    </ul>                    
+                </nav>
+            </header>  
+        </section>
+    
+        <footer>
+            <p data-aos="fade-up" data-aos-duration="2000">©️ Copyrights 2020-2021 All Rights Reserved</p>
+            <i class="fab fa-youtube-square fa-2x"></i>
+            <i class="fab fa-instagram-square fa-2x"></i>
+            <i class="fab fa-facebook-square fa-2x"></i>
+            <i class="fab fa-whatsapp-square fa-2x"></i>
+            <i class="fab fa-twitter-square fa-2x"></i>
+            <i class="fab fa-snapchat-square fa-2x"></i>
+        </footer>
+
+        <script src="assets/css/fontawesome/js/all.js"></script>
+        <script src="assets/aos-master/dist/aos.js"></script>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/owl-carousel/dist/owl.carousel.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".owl-carousel").owlCarousel();
+            });
+
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items:4,
+                loop:true,
+                margin:10,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true
+            });
+            $('.play').on('click',function(){
+                owl.trigger('play.owl.autoplay',[2000])
+            })
+            $('.stop').on('click',function(){
+                owl.trigger('stop.owl.autoplay')
+            })
+        </script>
+        <script>            
+            AOS.init();            
+        </script> 
+        <script>
+            var products = [
+                {
+                    "id": 1,
+                    "name": "Product One",
+                    "description": "This is Product One",
+                    "thumbnail": "assets/images/product-1.jpg",
+                    "price": "$1000",
+                    "rating": 5
+                },
+                {
+                    "id": 2,
+                    "name": "Product Two",
+                    "description": "This is Product Two",
+                    "thumbnail": "assets/images/product-2.jpg",
+                    "price": "$1100",
+                    "rating": 4
+                },
+                {
+                    "id": 3,
+                    "name": "Product Three",
+                    "description": "This is Product Three",
+                    "thumbnail": "assets/images/product-3.jpg",
+                    "price": "$1200",
+                    "rating": 5
+                },
+                {
+                    "id": 4,
+                    "name": "Product Four",
+                    "description": "This is Product Four",
+                    "thumbnail": "assets/images/product-4.jpg",
+                    "price": "$1300",
+                    "rating": 3
+                },
+                {
+                    "id": 5,
+                    "name": "Product Five",
+                    "description": "This is Product Five",
+                    "thumbnail": "assets/images/product-5.jpg",
+                    "price": "$1400",
+                    "rating": 5
+                },
+                {
+                    "id": 6,
+                    "name": "Product Six",
+                    "description": "This is Product Six",
+                    "thumbnail": "assets/images/product-6.jpg",
+                    "price": "$1500",
+                    "rating": 4
+                }
+        ];
+
+        var productsContainerSection = document.getElementById("productContainer");
+
+        products.forEach(product => {
+            
+            var cardSection = document.createElement('section');
+            cardSection.classList.add('card');
+            
+            var centerTagElem = document.createElement('center');
+            
+            var imageElem = document.createElement('img');
+            imageElem.src = product.thumbnail
+            
+            var articleElem = document.createElement('article');
+            
+            var nameHeader = document.createElement('h3');
+            nameHeader.innerHTML = product.name;
+            
+            var descPara = document.createElement('p');
+            descPara.innerHTML = product.description;
+
+            var pricePara = document.createElement('p');
+            pricePara.innerHTML = product.price;
+            
+            var addCartButton = document.createElement('button');
+            addCartButton.innerHTML = "Add To Cart";
+
+            var breakElement = document.createElement('br');
+
+            var ratingSpan = document.createElement('span');
+            ratingSpan.innerHTML = "Rating: "
+
+            articleElem.appendChild(nameHeader);
+            articleElem.appendChild(descPara);
+            articleElem.appendChild(pricePara);
+            centerTagElem.appendChild(imageElem);
+            centerTagElem.appendChild(articleElem);
+            centerTagElem.appendChild(addCartButton);
+            centerTagElem.appendChild(breakElement);
+            centerTagElem.appendChild(ratingSpan);
+            for(var i=0; i<product.rating; i++){
+                var ratingItalic = document.createElement('i');
+                ratingItalic.classList.add('fa');
+                ratingItalic.classList.add('fa-star');
+                ratingItalic.ariaHidden = true;
+                centerTagElem.appendChild(ratingItalic);
+            }
+            cardSection.appendChild(centerTagElem);
+            
+            productsContainerSection.appendChild(cardSection);
+
+        });
+        </script>       
+    </body>
+</html>

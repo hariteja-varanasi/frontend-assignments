@@ -1,0 +1,30 @@
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+    padding: 20px;
+}
+
+.half-pyramid, .inv-half-pyramid, .hollow-half-pyramid, .full-pyramid, .hollow-full-pyramid, .hollow-inv-half-pyramid{
+    color: crimson;
+    font-size: large;
+    font-weight: bold;
+    border: 2px solid black;       
+}
+
+.full-pyramid, .hollow-full-pyramid{
+    text-align: center;
+}
+
+.half-pyramid>p, .inv-half-pyramid>p, .hollow-half-pyramid>p, .full-pyramid>p, .hollow-full-pyramid>p, .hollow-inv-half-pyramid>p{
+    color: black;
+    font-size: medium;
+    font-weight: normal;
+}
+
+/*.inline-div{
+    display: inline;    
+}
+
+.div-center-align{
+    text-align: center;
+}*/

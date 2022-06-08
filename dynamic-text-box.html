@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic Text Boxes</title>
+        <link rel="stylesheet" href="assets/css/dynamic-text-boxes-styles.css">
+    </head>
+    <body>
+        <section class="container">            
+            <section class="header">
+                <p>Create textboxes that displays all 
+                    employee names with only readable option</p>
+            </section>
+            <section class="text-box-section">
+                <input id="inputTextBox" type="text" class="input-text-box">
+            </section>
+            <section class="add-button-section">
+                <button id="addButton" class="add-button">Add</button>
+            </section>
+            <section class="textbox-list">
+                <section class="dynamic-list-heading">
+                    Employee Names              
+                </section>
+                <section class="dynamic-list-container">
+                    <ul id="dynamicNamesList">
+                        <li><input type="text" value="Employee One" readonly></li>
+                        <li><input type="text" value="Employee Two" readonly></li>
+                        <li><input type="text" value="Employee Three" readonly></li>
+                        <li><input type="text" value="Employee Four" readonly></li>
+                        <li><input type="text" value="Employee Five" readonly></li>
+                    </ul>
+                </section>  
+            </section>            
+        </section> 
+        <script src="assets/js/jquery.js"></script>         
+        <script>
+            jQuery(function(){
+                $("#addButton").click(function(){
+                    $("#dynamicNamesList").append("<li><input type='text' value='" + $("#inputTextBox")[0].value  +"' readonly></li>");
+                });
+            });
+        </script>          
+    </body>
+</html>

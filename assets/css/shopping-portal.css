@@ -1,0 +1,158 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    display: inline-grid;    
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 80px; 
+    justify-items: center;   
+    margin: 30px;
+}
+
+header{
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    width: 100%;
+}
+
+header{
+    background-color: rgb(0, 123, 255);
+}
+
+header>nav{
+    margin: auto 20px;
+}
+
+header>nav>img{
+    float: left;
+}
+
+.login-image{
+    float: right;
+}
+
+header>nav>ul{
+    list-style-type: none;
+    float: left;
+}
+
+header>nav>ul>i{
+    float: right;
+}
+
+header>nav>ul>li{
+    display: inline-block;
+    padding: 10px;
+}
+
+header>nav>ul>li>a{
+    color: #fff;
+    text-decoration: none;
+}
+
+header>nav>ul>li:hover{
+    background-color: #fff;
+}
+
+header>ul>li:hover a{
+    background-color: #808080;
+}
+
+.dummy-section{
+    grid-auto-columns: 1;
+    grid-column-end: span 3;        
+}
+
+.container>.items{
+    background-color: teal;
+    border-radius: 5px;    
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card{
+    padding: 50px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card>center>img{
+    width: 75%;       
+
+}
+
+.card>center>article{    
+    line-height: 2;
+}
+
+.card>center>button{
+    padding: 15px;
+    background-color: rgb(0, 123, 255);
+    color: #fff;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    width: 75%;
+}
+
+footer{
+    background: linear-gradient(to right, #141e30, #243b55);
+    padding: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+footer>p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.fa-youtube-square, .fa-instagram-square, .fa-facebook-square, .fa-whatsapp-square, .fa-twitter-square, .fa-snapchat-square{
+    transition: 1s;
+    margin: 10px;
+}
+
+.fa-youtube-square:hover, .fa-instagram-square:hover, .fa-facebook-square:hover, .fa-whatsapp-square:hover, .fa-twitter-square:hover, .fa-snapchat-square:hover{
+    transform: scale(2.2);
+}
+
+.carousel-container{
+    padding: 20px;
+    grid-column-start: 1;    
+    grid-column-end: span 3;
+    width: 100%;
+}
+
+.carousel-section{    
+    border: 1px solid;
+    padding: 20px;        
+}
+
+.carousel-section>img{
+    width: 100%;
+    height: 300px;
+}
+
+.carousel-section>h2{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.carousel-buttons{
+    text-align: center;
+}
+
+.container>header>nav>i{
+    float: right;    
+}
+
+.fa-star{
+    color: goldenrod;
+}

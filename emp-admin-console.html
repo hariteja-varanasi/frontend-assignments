@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Admin Console</title>
+        <link rel="stylesheet" href="assets/css/emp-admin-console.css">
+    </head>
+    <body>
+        <center>
+            <h1>Employee Administration Console</h1>            
+            <section class="main-container-section">
+                <section class="form-container">
+                    <form name="cForm" onsubmit="validate(event)" method="post" action="">
+                        <section class="first-name-section">
+                            <label for="firstName" class="form-label">First Name : </label>
+                            <input id="firstName" name="firstName" type="text" class="form-input">
+                            <strong class="error" id="firstNameErr"></strong>
+                        </section>
+                        <section class="last-name-section">
+                            <label for="lastName" class="form-label">Last Name : </label>
+                            <input id="lastName" name="lastName" type="text" class="form-input">
+                            <strong class="error" id="lastNameErr"></strong>
+                        </section>
+                        <section class="mobile-one-section">
+                            <label for="mobileOne" class="form-label">Mobile One : </label>
+                            <select name="countryCodeSelectOne" id="countryCodeSelectOne" class="mobile-select">
+                                <option value="+1">+1</option>
+                                <option value="+44">+44</option>
+                                <option value="+39">+39</option>
+                                <option value="+2">+2</option>
+                                <option value="+3">+3</option>
+                                <option value="+4">+4</option>
+                                <option value="+91">+91</option>
+                            </select>
+                            <input id="mobileOne" name="mobileOne" type="number" maxlength="10" class="form-input">
+                            <strong class="error" id="mobileOneErr"></strong>
+                        </section>
+                        <section class="mobile-two-section">
+                            <label for="mobileTwo" class="form-label">Mobile Two : </label>
+                            <select name="countryCodeSelectTwo" id="countryCodeSelectTwo" class="mobile-select">
+                                <option value="+1">+1</option>
+                                <option value="+44">+44</option>
+                                <option value="+39">+39</option>
+                                <option value="+2">+2</option>
+                                <option value="+3">+3</option>
+                                <option value="+4">+4</option>
+                                <option value="+91">+91</option>
+                            </select>
+                            <input id="mobileTwo" name="mobileTwo" type="number" maxlength="10" class="form-input">
+                            <strong class="error" id="mobileTwoErr"></strong>
+                        </section>
+                        <section class="address-section">
+                                <label id="addressLabel" for="address" class="form-label">Address : </label>                        
+                                <input name="address" id="address" type="text" class="form-input">
+                                <strong class="error" id="addressErr"></strong>
+                        </section>
+                        <section class="photo-section">
+                            <label id="photoLabel" for="photo" class="form-label">Image : </label>
+                            <!-- <input type="file" id="imageFile" name="imageFile" class="form-input" placeholder="Paste the image path here"> -->
+                            <input type="text" id="imageFile" name="imageFile" class="form-input" placeholder="Paste the image path here">
+                        </section>
+                        <section class="button-section">
+                            <button id="submitButton" type="button" class="submit-button">Submit</button>
+                            <button id="updateButton" type="button" class="submit-button">Update</button>
+                        </section>
+                    </form>
+                </section>
+                <section class="table-container">
+                    <table id="employeeTable">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Full Name</th>
+                                <th>Mobile One</th>
+                                <th>Mobile Two</th>
+                                <th>Address</th>
+                                <th>Photo</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td name="firstName">Employee</td>
+                                <td name="lastName">One</td>
+                                <td name="fullName">Employee One</td>
+                                <td name="mobileOne">1234567890</td>
+                                <td name="mobileTwo">1234567890</td>
+                                <td name="address">Address One</td>
+                                <td><img name="empPhoto" src="assets/images/image.jpg" alt="" width="50px" height="50px"></td>
+                                <td><button class="edit-button" type="button">Edit</button></td>
+                                <td><button class="delete-button" type="button">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td name="firstName">Employee</td>
+                                <td name="lastName">Two</td>
+                                <td name="fullName">Employee Two</td>
+                                <td name="mobileOne">1234567890</td>
+                                <td name="mobileTwo">1234567890</td>
+                                <td name="address">Address Two</td>
+                                <td><img name="empPhoto" src="assets/images/image.jpg" alt="" width="50px" height="50px"></td>
+                                <td><button class="edit-button" type="button">Edit</button></td>
+                                <td><button class="delete-button" type="button">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td name="firstName">Employee</td>
+                                <td name="lastName">Three</td>
+                                <td name="fullName">Employee Three</td>
+                                <td name="mobileOne">1234567890</td>
+                                <td name="mobileTwo">1234567890</td>
+                                <td name="address">Address Three</td>
+                                <td><img name="empPhoto" src="assets/images/image.jpg" alt="" width="50px" height="50px"></td>
+                                <td><button class="edit-button" type="button">Edit</button></td>
+                                <td><button class="delete-button" type="button">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td name="firstName">Employee</td>
+                                <td name="lastName">Four</td>
+                                <td name="fullName">Employee Four</td>
+                                <td name="mobileOne">1234567890</td>
+                                <td name="mobileTwo">1234567890</td>
+                                <td name="address">Address Four</td>
+                                <td><img name="empPhoto" src="assets/images/image.jpg" alt="" width="50px" height="50px"></td>
+                                <td><button class="edit-button" type="button">Edit</button></td>
+                                <td><button class="delete-button" type="button">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td name="firstName">Employee</td>
+                                <td name="lastName">Five</td>
+                                <td name="fullName">Employee Five</td>
+                                <td name="mobileOne">1234567890</td>
+                                <td name="mobileTwo">1234567890</td>
+                                <td name="address">Address Five</td>
+                                <td><img name="empPhoto" src="assets/images/image.jpg" alt="" width="50px" height="50px"></td>
+                                <td><button class="edit-button" type="button">Edit</button></td>
+                                <td><button class="delete-button" type="button">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td name="firstName">Employee</td>
+                                <td name="lastName">Six</td>
+                                <td name="fullName">Employee Six</td>
+                                <td name="mobileOne">1234567890</td>
+                                <td name="mobileTwo">1234567890</td>
+                                <td name="address">Address Six</td>
+                                <td><img name="empPhoto" src="assets/images/image.jpg" alt="" width="50px" height="50px"></td>
+                                <td><button class="edit-button" type="button">Edit</button></td>
+                                <td><button class="delete-button" type="button">Delete</button></td>
+                            </tr>
+                        </tbody>                        
+                    </table>        
+                </section>
+            </section>            
+        </center>                  
+        <script src="assets/js/jquery.js"></script>
+        <script>
+            let tableRowEdit;
+            jQuery(function(){    
+                
+                $("#updateButton").hide();
+
+                $("#submitButton").click(function(){
+                    var firstName = $("#firstName")[0].value;
+                    var lastName = $("#lastName")[0].value;
+                    var fullName = firstName + " " + lastName;
+                    var mobileOne = $("#mobileOne")[0].value;
+                    var mobileTwo = $("#mobileTwo")[0].value;
+                    var addressTxtArea = $("#address")[0].value;                    
+                    var photo = $("#imageFile")[0].value;
+
+                    document.getElementById("employeeTable").insertRow(-1).innerHTML = 
+                    "<td name='firstName'>" + firstName + "</td>" +
+                    "<td name='lastName'>" + lastName + "</td>" + 
+                    "<td name='fullName'>" + fullName + "</td>" +
+                    "<td name='mobileOne'>" + mobileOne + "</td>" + 
+                    "<td name='mobileTwo'>" + mobileTwo + "</td>" +
+                    "<td name='address'>" + addressTxtArea + "</td>" +
+                    "<td><img name='empPhoto' src='" + photo + "' alt='assets/images/image.jpg' width='50px' height='50px'/></td>" +
+                    "<td><button class='edit-button' type='button' onclick='testFunction(this);'>Edit</button></td>" +
+                    "<td><button class='delete-button' type='button'>Delete</button></td>";
+
+                    $("#firstName")[0].value = "";
+                    $("#lastName")[0].value = "";
+                    $("#mobileOne")[0].value = "";
+                    $("#mobileTwo")[0].value = "";
+                    $("#address")[0].value = "";
+                    $("#imageFile")[0].value = "";
+                });
+
+                $(".edit-button").click(function(){
+                    var firstName = $(this).parents("tr").find("td[name='firstName']")[0].innerText;
+                    var lastName = $(this).parents("tr").find("td[name='lastName']")[0].innerText;
+                    var fullName = $(this).parents("tr").find("td[name='fullName']")[0].innerText;
+                    var mobileOne = $(this).parents("tr").find("td[name='mobileOne']")[0].innerText;
+                    var mobileTwo = $(this).parents("tr").find("td[name='mobileTwo']")[0].innerText;
+                    var address = $(this).parents("tr").find("td[name='address']")[0].innerText;
+                    var photo = $(this).parents("tr").find("img[name='empPhoto']")[0].src;
+
+                    console.log("First Name : " + firstName);
+                    console.log("Last Name : " + lastName);
+                    console.log("Full Name : " + fullName);
+                    console.log("Mobile One : " + mobileOne);
+                    console.log("Mobile Two : " + mobileTwo);
+                    console.log("Address : " + address);
+                    console.log("First Name : " + photo);
+                    
+                    $("#firstName")[0].value = firstName;
+                    $("#lastName")[0].value = lastName;
+                    $("#mobileOne")[0].value = mobileOne;
+                    $("#mobileTwo")[0].value = mobileTwo;
+                    $("#address")[0].value = address;
+                    tableRowEdit = $(this).parents("tr");
+                    $("#submitButton").hide();
+                    $("#updateButton").show();
+                });
+
+                $("#updateButton").click(function(){
+                    console.log("table row for edit is : ", tableRowEdit);
+                    tableRowEdit.find("td[name='firstName']")[0].innerText = $("#firstName")[0].value;
+                    tableRowEdit.find("td[name='lastName']")[0].innerText = $("#lastName")[0].value;
+                    tableRowEdit.find("td[name='fullName']")[0].innerText = $("#firstName")[0].value + " " + $("#lastName")[0].value;
+                    tableRowEdit.find("td[name='mobileOne']")[0].innerText = $("#mobileOne")[0].value;
+                    tableRowEdit.find("td[name='mobileTwo']")[0].innerText = $("#mobileTwo")[0].value;
+                    tableRowEdit.find("td[name='address']")[0].innerText = $("#address")[0].value;
+                    tableRowEdit.find("img[name='empPhoto']")[0].src = $("#imageFile")[0].value;
+                });
+
+                $(".delete-button").click(function(){
+                    $(this).parents("tr").remove();
+                });  
+            });
+
+            function testFunction(event)
+            {
+                console.log("This is a test Function");
+                debugger;
+                tableRowEdit = this.closest("tr");                    
+            }
+
+            
+        </script>      
+    </body>
+</html>

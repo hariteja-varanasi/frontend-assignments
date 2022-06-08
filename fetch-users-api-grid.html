@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fetch Users API Grid</title>
+        <link rel="stylesheet" href="assets/css/fetch-users-api-grid.css">
+    </head>
+    <body>
+        <script>
+            fetch(`https://panorbit.in/api/users.json`)
+            .then(response => response.json())
+            .then( result => {
+                console.log(result);
+
+                let sectionContainer = document.createElement('section'); 
+                sectionContainer.classList.add('section-container');
+ 
+                result.users.forEach( item => {
+
+                    let sectionElem = document.createElement('section');
+                    sectionElem.classList.add('section-item');
+
+                    let nameHeader = document.createElement('h2');                                        
+                    let usernamePara = document.createElement('p');
+                    let emailPara = document.createElement('p');
+                    let websitePara = document.createElement('p');
+                    let cityPara = document.createElement('p');
+                    let streetPara = document.createElement('p');
+                    let suitePara = document.createElement('p');
+                    let zipCodePara = document.createElement('p');
+
+                    nameHeader.innerHTML = item.name;
+                    usernamePara.innerHTML = item.username;
+                    emailPara.innerHTML = item.email;
+                    websitePara.innerHTML = item.website;
+                    cityPara.innerHTML = item.address.city;
+                    streetPara.innerHTML = item.address.street;
+                    suitePara.innerHTML = item.address.suite;
+                    zipCodePara.innerHTML = item.address.zipcode;
+                    
+                    sectionElem.appendChild(nameHeader);
+                    sectionElem.appendChild(usernamePara);
+                    sectionElem.appendChild(emailPara);
+                    sectionElem.appendChild(websitePara);
+                    sectionElem.appendChild(cityPara);
+                    sectionElem.appendChild(streetPara);
+                    sectionElem.appendChild(suitePara);
+                    sectionElem.appendChild(zipCodePara);
+
+                    sectionContainer.appendChild(sectionElem);
+
+                    
+                    
+                });
+                document.body.appendChild(sectionContainer);
+                //document.write(`<h3>result is ${ result } </h3>`);
+            })
+            .catch(error => { console.log("ERROR : ", error.message) }); 
+         </script>                
+    </body>
+</html>

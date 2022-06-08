@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopping Portal</title>
+        <link rel="stylesheet" href="assets/css/fontawesome/css/all.css">
+        <link rel="stylesheet" href="assets/aos-master/dist/aos.css">
+        <link rel="stylesheet" href="assets/owl-carousel/docs/assets/css/docs.theme.min.css">
+        <link rel="stylesheet" href="assets/owl-carousel/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/owl-carousel/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/css/shopping-portal.css">
+    </head>
+    <body>
+        <section class="container">
+            <header>
+                <nav>
+                    <img src="assets/images/logo.jpg" alt="">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">PRODUCTS</a></li>
+                    </ul>
+                    <img src="assets/images/logo.jpg" alt="" width="200px" height="200px" class="login-image">
+                </nav>
+            </header>  
+
+            <!-- <section class="carousel-container">
+                <section class="owl-carousel owl-theme owl-loaded owl-drag">
+                    <section class="carousel-section">
+                        <img src="assets/images/image1.jpg" alt="" width="100%" height="100%">                        
+                    </section>
+                    <section class="carousel-section">
+                        <img src="assets/images/image2.jpg" alt="">                        
+                    </section>
+                    <section class="carousel-section">
+                        <img src="assets/images/desktop.jpg" alt="">                        
+                    </section>
+                    <section class="carousel-section">
+                        <img src="assets/images/banner.jpg" alt="">                        
+                    </section>
+                    <section class="carousel-section">
+                        <img src="assets/images/mobile.jpg" alt="">                        
+                    </section>
+                    <section class="carousel-section">
+                        <img src="assets/images/tab.jpg" alt="">                        
+                    </section>
+                    <section class="carousel-section">
+                        <img src="assets/images/image1.jpg" alt="">                        
+                    </section>                                            
+                </section>
+                <section class="carousel-buttons">
+                    <button class="button secondary play">Play</button>
+                    <button class="button secondary stop">Stop</button>
+                </section>
+            </section>
+            <section class="dummy-section"></section>-->
+            <section class="card">
+                <center>
+                    <img src="assets/images/image1.jpg" alt="">
+                    <article>
+                        <h3>IMAGE-1</h3>
+                        <p>Lorem ipsum dolor</p>
+                    </article>
+                    <button type="button">Add to Cart</button><br>
+                    <span>Rating : </span>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </center>                
+            </section>
+            <section class="card">
+                <center>
+                    <img src="assets/images/image2.jpg" alt="">
+                    <article>
+                        <h3>IMAGE-2</h3>
+                        <p>Lorem ipsum dolor</p>
+                    </article>
+                    <button type="button">Add to Cart</button>
+                </center>                                
+            </section>
+            <section class="card">
+                <center>
+                    <img src="assets/images/image1.jpg" alt="">
+                    <article>
+                        <h3>IMAGE-3</h3>
+                        <p>Lorem ipsum dolor</p>
+                    </article>
+                    <button type="button">Add to Cart</button>
+                </center>                
+            </section>
+            <section class="card">
+                <center>
+                    <img src="assets/images/image2.jpg" alt="">
+                    <article>
+                        <h3>IMAGE-4</h3>
+                        <p>Lorem ipsum dolor</p>
+                    </article>
+                    <button type="button">Add to Cart</button>
+                </center>                
+            </section>
+            <section class="card">
+                <center>
+                    <img src="assets/images/image1.jpg" alt="">
+                    <article>
+                        <h3>IMAGE-5</h3>
+                        <p>Lorem ipsum dolor</p>
+                    </article>
+                    <button type="button">Add to Cart</button>
+                </center>                
+            </section>
+            <section class="card">
+                <center>
+                    <img src="assets/images/image2.jpg" alt="">
+                    <article>
+                        <h3>IMAGE-6</h3>
+                        <p>Lorem ipsum dolor</p>
+                    </article>
+                    <button type="button">Add to Cart</button>
+                </center>                
+            </section>
+            <section class="dummy-section"></section>
+        </section>
+    
+        <footer>
+            <p data-aos="fade-up" data-aos-duration="2000">©️ Copyrights 2020-2021 All Rights Reserved</p>
+            <i class="fab fa-youtube-square fa-2x"></i>
+            <i class="fab fa-instagram-square fa-2x"></i>
+            <i class="fab fa-facebook-square fa-2x"></i>
+            <i class="fab fa-whatsapp-square fa-2x"></i>
+            <i class="fab fa-twitter-square fa-2x"></i>
+            <i class="fab fa-snapchat-square fa-2x"></i>
+        </footer>
+
+        <script src="assets/css/fontawesome/js/all.js"></script>
+        <script src="assets/aos-master/dist/aos.js"></script>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/owl-carousel/dist/owl.carousel.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".owl-carousel").owlCarousel();
+            });
+
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items:4,
+                loop:true,
+                margin:10,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true
+            });
+            $('.play').on('click',function(){
+                owl.trigger('play.owl.autoplay',[2000])
+            })
+            $('.stop').on('click',function(){
+                owl.trigger('stop.owl.autoplay')
+            })
+        </script>
+        <script>            
+            AOS.init();            
+        </script>        
+    </body>
+</html>
